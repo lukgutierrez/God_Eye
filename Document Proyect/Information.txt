@@ -1,0 +1,7 @@
+Create Proyect
+*https://pub.dev/packages/flutter_background_geolocation#-installing-the-plugin
+(use packages interest)
+*https://pub.dev/packages/geolocator
+(Puedes usar el geolocator que te permite saber la ubicación en tiempo real. Luego lo mandas por socket a una sala en donde van a estar los celulares que reciben),
+*Open street maps para cargar los mapas . Con el plugin geolocator con una linea de codigo obtienes las coordenadas actuales.. para utilizarlas dentro de osm . Y luego esas mismas las guardas cada cierto tiempo en una base de datos para que los demas usuarios obtengan esas coordenadas y las ubiquen en el mapa.
+*Socket(Servidor).
