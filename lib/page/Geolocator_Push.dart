@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:geocoding/geocoding.dart';
+import 'package:share_plus/share_plus.dart';
 import 'package:geolocator/geolocator.dart';
 
 class LocationPage extends StatefulWidget {
@@ -85,7 +86,8 @@ class _LocationPageState extends State<LocationPage> {
               ElevatedButton(
                 onPressed: _getCurrentPosition,
                 child: const Text("Get Current Location"),
-              )
+              ),
+              ElevatedButton(onPressed: () {}, child: Text("Compartir Text"))
             ],
           ),
         ),
