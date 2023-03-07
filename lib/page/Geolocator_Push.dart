@@ -77,7 +77,6 @@ class _LocationPageState extends State<LocationPage> {
         "Mi ubicación actual es en : ${_currentAddress ?? ""}\nLATITUD: ${_currentPosition?.latitude ?? ""}\nLONGITUD: ${_currentPosition?.longitude ?? ""}";
     return Scaffold(
       backgroundColor: Colors.white,
-      appBar: AppBar(title: const Text("Location Page")),
       body: SafeArea(
         child: Center(
           child: Column(
