@@ -35,9 +35,8 @@ class _LocationPageState extends State<LocationPage> {
       }
     }
     if (permission == LocationPermission.deniedForever) {
-      ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
-          content: Text(
-              'Location permissions are permanently denied, we cannot request permissions.')));
+      ScaffoldMessenger.of(context)
+          .showSnackBar(const SnackBar(content: Text('')));
       return false;
     }
     return true;
@@ -63,7 +62,7 @@ class _LocationPageState extends State<LocationPage> {
       Placemark place = placemarks[0];
       setState(() {
         _currentAddress =
-            '${place.street}, ${place.subLocality}, ${place.subAdministrativeArea}, ${place.postalCode}';
+            '${place.street},${place.subLocality},${place.subAdministrativeArea},${place.postalCode}';
       });
     }).catchError((e) {
       debugPrint(e);
@@ -72,22 +71,35 @@ class _LocationPageState extends State<LocationPage> {
 
   @override
   Widget build(BuildContext context) {
+    String message =
+        "Si recibes este MENSAJE,Estoy en peligro por favor ayudame :( \n";
+    String ubication =
+        "Mi ubicación actual es en : ${_currentAddress ?? ""}\nLATITUD: ${_currentPosition?.latitude ?? ""}\nLONGITUD: ${_currentPosition?.longitude ?? ""}";
     return Scaffold(
+      backgroundColor: Colors.white,
       appBar: AppBar(title: const Text("Location Page")),
       body: SafeArea(
         child: Center(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Text('LAT: ${_currentPosition?.latitude ?? ""}'),
-              Text('LNG: ${_currentPosition?.longitude ?? ""}'),
-              Text('ADDRESS: ${_currentAddress ?? ""}'),
-              const SizedBox(height: 32),
               ElevatedButton(
-                onPressed: _getCurrentPosition,
-                child: const Text("Get Current Location"),
-              ),
-              ElevatedButton(onPressed: () {}, child: Text("Compartir Text"))
+                  style: ElevatedButton.styleFrom(
+                      elevation: 0, primary: Colors.white),
+                  onPressed: () async {
+                    _getCurrentPosition();
+                    await Share.share(message.padLeft(50) + ubication);
+                  },
+                  child: Container(
+                    width: 200,
+                    height: 200,
+                    child: Image(image: AssetImage("assets/botom1.png")),
+                  )),
+              Container(
+                width: 140,
+                height: 140,
+                child: Image(image: AssetImage("assets/help.gif")),
+              )
             ],
           ),
         ),
