@@ -1,16 +1,2 @@
-# god_eye_aplication
-
-A new Flutter project.
-
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+# GOD-EYE(OJO DE DIOS)
+God Eye, la aplicación de seguimiento de ubicación en tiempo real que también funciona como un botón antipánico. Con God Eye, puedes compartir tu ubicación en tiempo real con cualquier persona y, en caso de emergencia, simplemente presionar el botón antipánico para enviar tu ubicación a tus contactos de emergencia.
